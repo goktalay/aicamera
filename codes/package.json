@@ -1,0 +1,21 @@
+{
+  "name": "aicamera-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CPDD075CCT üç ışıklı AI takip modülü için web kontrol arayüzü",
+  "scripts": {
+    "start": "node server/server.js",
+    "sim": "node server/server.js --sim",
+    "test": "node --test test/protocol.test.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "5.1.0",
+    "@fontsource/ibm-plex-sans": "5.1.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "ws": "8.18.0"
+  }
+}

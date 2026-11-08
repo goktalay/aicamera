@@ -1,3 +1,7 @@
 # Yerel araç durumu (ruflo / claude-flow); repoya girmez
 .claude-flow/
 .swarm/
+
+# Node bağımlılıkları ve yerel ayarlar
+node_modules/
+codes/server/config.local.json

@@ -6,7 +6,7 @@ CPDD075CCT üç ışıklı AI takip modülü (gimbal, iki görünür ışık kam
 
 | Klasör | İçerik |
 | --- | --- |
-| `codes/` | Web uygulaması (geliştirme burada yapılır) |
+| `codes/` | Web kontrol uygulaması: kurulum ve çalıştırma için [`codes/README.md`](codes/README.md) |
 | `codes/design-system/` | Tracklight tasarım sistemi: token'lar, React bileşenleri, kullanım rehberi |
 | `documents/` | Üretici dokümanları: teknik şartname, S.BUS kanal tablosu, FPV kullanım kılavuzu, seri haberleşme protokolü V2.14 |
 | `design/` | Boyut çizimleri (PDF) ve 3D model (STP) |
