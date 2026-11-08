@@ -1,0 +1,17 @@
+<!-- @dsCard group="Durum" height=120 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ProgressBar — önizleme</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>body{margin:0;padding:16px;background:var(--surface-100);color:var(--ink);font:400 14px/20px var(--font-sans)}#root{display:flex;flex-direction:column;gap:16px;max-width:520px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var T = window.Tracklight, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(T.ProgressBar, { label: 'Video kartı yükseltiliyor', value: 62, note: 'Yükseltme sürerken cihazın gücünü kesmeyin.' }),
+    h(T.ProgressBar, { label: 'Jiroskop kalibrasyonu tamamlandı', value: 100, tone: 'ok' })
+  ));
+</script>
+</body>
+</html>

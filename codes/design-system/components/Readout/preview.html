@@ -1,0 +1,21 @@
+<!-- @dsCard group="Durum" height=96 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Readout — önizleme</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>body{margin:0;padding:16px;background:var(--surface-100);color:var(--ink);font:400 14px/20px var(--font-sans)}#root{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var T = window.Tracklight, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(T.Readout, { label: 'Yunuslama', value: '-20.4', unit: '°' }),
+    h(T.Readout, { label: 'Sapma', value: '112.0', unit: '°' }),
+    h(T.Readout, { label: 'Sıcaklık', value: '36.5', unit: '°C', tone: 'thermal' }),
+    h(T.Readout, { label: 'TV odak', value: '24.0', unit: 'mm', tone: 'accent' }),
+    h(T.Readout, { label: 'Hedef X', value: '640', unit: 'px', size: 'sm' }),
+    h(T.Readout, { label: 'Hedef Y', value: '360', unit: 'px', size: 'sm' })
+  ));
+</script>
+</body>
+</html>

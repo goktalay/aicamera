@@ -1,0 +1,38 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Tracklight — kapak</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  html, body { margin: 0; }
+  .cover { position: relative; width: 960px; height: 288px; background: var(--surface-000); overflow: hidden; }
+  svg { position: absolute; inset: 0; }
+  .b-fill { fill: var(--accent-fill); } .b-thermal { fill: var(--thermal); } .b-accent { fill: var(--accent); }
+  .b-steel { fill: var(--surface-300); } .b-track { fill: var(--hud-track); }
+  .r-md { rx: var(--radius-md); }
+  .plus { stroke: var(--on-accent); stroke-width: 2; stroke-linecap: square; opacity: .5; fill: none; }
+  .text { position: absolute; left: 48px; bottom: 40px; max-width: 440px; }
+  .name { margin: 0; font: 600 72px/.95 var(--font-sans); letter-spacing: -0.02em; color: var(--ink); }
+  .tag { margin: 12px 0 0; font: 400 14px/20px var(--font-sans); color: var(--ink-muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+  <svg viewBox="0 0 960 288" width="960" height="288" aria-hidden="true">
+    <!-- Bloklar: accent-fill 240×216 (ana levha), thermal 200×144 sağ kenardan taşar, accent 168×80 alt kenardan taşar, surface-300 96×96, hud-track 48×48 -->
+    <!-- Düzen: x=528'den başlayan tek uzun levha ve çevresinde kademeli uydular; görüntü / IR / takip renk üçlüsü -->
+    <!-- Desen: hassas, teknik, mono, 4px ızgara satırı → artı ızgarası; nişangâh ve HUD dilinden geldiği için seçildi -->
+    <!-- Ölçüler: adım 48 = 2×space-6, artı kolu 12 = space-3, köşeler radius-md -->
+    <rect class="b-fill r-md" x="528" y="0" width="240" height="216"/>
+    <rect class="b-thermal r-md" x="768" y="48" width="200" height="144"/>
+    <rect class="b-accent r-md" x="600" y="216" width="168" height="80"/>
+    <rect class="b-steel r-md" x="768" y="192" width="96" height="96"/>
+    <rect class="b-track r-md" x="864" y="192" width="48" height="48"/>
+    <path class="plus" d="M558 36h12M564 30v12"/><path class="plus" d="M558 84h12M564 78v12"/><path class="plus" d="M558 132h12M564 126v12"/><path class="plus" d="M558 180h12M564 174v12"/><path class="plus" d="M606 36h12M612 30v12"/><path class="plus" d="M606 84h12M612 78v12"/><path class="plus" d="M606 132h12M612 126v12"/><path class="plus" d="M606 180h12M612 174v12"/><path class="plus" d="M654 36h12M660 30v12"/><path class="plus" d="M654 84h12M660 78v12"/><path class="plus" d="M654 132h12M660 126v12"/><path class="plus" d="M654 180h12M660 174v12"/><path class="plus" d="M702 36h12M708 30v12"/><path class="plus" d="M702 84h12M708 78v12"/><path class="plus" d="M702 132h12M708 126v12"/><path class="plus" d="M702 180h12M708 174v12"/>
+  </svg>
+  <div class="text">
+    <h1 class="name">Tracklight</h1>
+    <p class="tag">Üç ışıklı AI takip modülü için web kontrol arayüzü.</p>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Temel" height=112 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Icon — önizleme</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>body{margin:0;padding:16px;background:var(--surface-100);color:var(--ink);font:400 14px/20px var(--font-sans)}#root{display:flex;flex-wrap:wrap;gap:12px;align-items:center}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var T = window.Tracklight, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    T.iconNames.map(function (n) {
+      return h('div', { key: n, style: { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4, width: 64, color: 'var(--ink)' } },
+        h(T.Icon, { name: n, size: 24 }), h('span', { style: { font: '400 11px/14px var(--font-mono)', color: 'var(--ink-muted)' } }, n));
+    })
+  ));
+</script>
+</body>
+</html>

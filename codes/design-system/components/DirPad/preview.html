@@ -1,0 +1,19 @@
+<!-- @dsCard group="Eylemler" height=168 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>DirPad — önizleme</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>body{margin:0;padding:16px;background:var(--surface-100);color:var(--ink);font:400 14px/20px var(--font-sans)}#root{display:flex;flex-wrap:wrap;gap:12px;align-items:center}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var T = window.Tracklight, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(T.DirPad, { onMove: function(){}, onStop: function(){}, onCenter: function(){} }),
+    h('div', { style: { display: 'flex', flexDirection: 'column', gap: 12 } },
+      h(T.Readout, { label: 'Yunuslama', value: '-20.4', unit: '°' }),
+      h(T.Readout, { label: 'Sapma', value: '112.0', unit: '°' }))
+  ));
+</script>
+</body>
+</html>

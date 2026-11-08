@@ -1,0 +1,19 @@
+<!-- @dsCard group="Formlar" height=168 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Field — önizleme</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>body{margin:0;padding:16px;background:var(--surface-100);color:var(--ink);font:400 14px/20px var(--font-sans)}#root{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  var T = window.Tracklight, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null,
+    h(T.Field, { label: 'Seri port', options: ['COM1', 'COM7', 'COM42'], defaultValue: 'COM42', mono: true }),
+    h(T.Field, { label: 'Baud hızı', options: ['9600', '57600', '115200'], defaultValue: '115200', mono: true, hint: 'Varsayılan 115200' }),
+    h(T.Field, { label: 'Komut portu', defaultValue: '123500', mono: true, error: 'Port 1–65535 arasında olmalı.' }),
+    h(T.Field, { label: 'RTSP adresi', defaultValue: 'rtsp://192.168.8.102/live/0', mono: true })
+  ));
+</script>
+</body>
+</html>
