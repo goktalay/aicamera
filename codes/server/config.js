@@ -12,9 +12,11 @@ const DEFAULTS = {
   video: {
     fps: 20,
     width: 1280,
+    // CPDD075CCT RTSP verisini yalnızca UDP ile gönderiyor; TCP'de oturum açılıyor ama kare gelmiyor
+    transport: 'udp',
+    // live/1 bu cihazda 404 döndürüyor; ek akış gerekirse Ayarlar'dan eklenebilir
     streams: [
-      { id: 'main', label: 'Ana akış (live/0)', url: 'rtsp://192.168.144.108/live/0' },
-      { id: 'sub', label: 'İkinci akış (live/1)', url: 'rtsp://192.168.144.108/live/1' }
+      { id: 'main', label: 'Ana akış (live/0)', url: 'rtsp://192.168.144.108/live/0' }
     ]
   }
 };
@@ -42,6 +44,7 @@ function validate(c) {
     if (!/^rtsp:\/\/[^\s]+$/i.test(s.url)) errs.push(`"${s.label}" için RTSP adresi rtsp:// ile başlamalı.`);
   }
   if (!(c.video.fps >= 1 && c.video.fps <= 60)) errs.push('Kare hızı 1–60 arasında olmalı.');
+  if (!['udp', 'tcp'].includes(c.video.transport)) errs.push('RTSP taşıma yöntemi UDP veya TCP olmalı.');
   if (!(c.video.width >= 320 && c.video.width <= 1920)) errs.push('Video genişliği 320–1920 arasında olmalı.');
   return errs;
 }

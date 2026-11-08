@@ -27,7 +27,7 @@ class MjpegStream extends EventEmitter {
     if (this.source.test) {
       return ['-hide_banner', '-loglevel', 'error', '-re', '-f', 'lavfi', '-i', `testsrc2=size=1280x720:rate=${this.opts.fps}`, ...out];
     }
-    return ['-hide_banner', '-loglevel', 'error', '-fflags', 'nobuffer', '-flags', 'low_delay', '-rtsp_transport', 'tcp',
+    return ['-hide_banner', '-loglevel', 'error', '-fflags', 'nobuffer', '-flags', 'low_delay', '-rtsp_transport', this.opts.transport || 'udp',
       '-timeout', '5000000', '-i', this.source.url, ...out];
   }
 
@@ -115,7 +115,7 @@ class VideoHub extends EventEmitter {
     this.streams.clear();
     for (const def of cfg.streams) {
       const src = opts.sim ? { test: true } : { url: def.url };
-      const st = new MjpegStream(def.id, src, { fps: cfg.fps, width: cfg.width, ffmpeg: opts.ffmpeg || 'ffmpeg' });
+      const st = new MjpegStream(def.id, src, { fps: cfg.fps, width: cfg.width, transport: cfg.transport, ffmpeg: opts.ffmpeg || 'ffmpeg' });
       st.on('state', (e) => this.emit('state', e));
       this.streams.set(def.id, st);
     }

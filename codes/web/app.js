@@ -321,6 +321,11 @@
       h('div', { className: 'two' },
         h(T.Field, { id: 'v-fps', label: 'Kare hızı', mono: true, value: String(form.video.fps), onChange: (e) => set((n) => { n.video.fps = num(e.target.value); }), options: ['10', '15', '20', '25', '30'].map((v) => ({ value: v, label: `${v} fps` })) }),
         h(T.Field, { id: 'v-width', label: 'Görüntü genişliği', mono: true, value: String(form.video.width), onChange: (e) => set((n) => { n.video.width = num(e.target.value); }), options: ['640', '960', '1280', '1920'].map((v) => ({ value: v, label: `${v} px` })) })),
+      h(T.Field, {
+        id: 'v-transport', label: 'RTSP taşıma', value: form.video.transport || 'udp', onChange: (e) => set((n) => { n.video.transport = e.target.value; }),
+        options: [{ value: 'udp', label: 'UDP (bu kamera için)' }, { value: 'tcp', label: 'TCP' }],
+        hint: 'Görüntü bağlanıp hiç kare gelmiyorsa diğer yöntemi deneyin.'
+      }),
       st.configErrors ? h('ul', { className: 'errors' }, st.configErrors.map((e) => h('li', { key: e }, e))) : null,
       h('div', { className: 'btn-row' },
         h(T.Button, { variant: 'primary', onClick: () => send({ t: 'config', config: { camera: form.camera, video: form.video } }) }, 'Kaydet ve yeniden bağlan'),

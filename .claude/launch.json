@@ -2,6 +2,12 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "aicamera",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["codes/server/server.js"],
+      "port": 8080
+    },
+    {
       "name": "aicamera-sim",
       "runtimeExecutable": "node",
       "runtimeArgs": ["codes/server/server.js", "--sim"],
